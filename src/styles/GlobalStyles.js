@@ -1,0 +1,64 @@
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyles = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  html {
+    min-height: 100%;
+  }
+
+  html,
+  body {
+    font-style: normal;
+    font-stretch: normal;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: normal;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: none;
+  }
+
+  ul,
+  menu,
+  dir {
+    padding-left: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    margin: 0;
+  }
+
+  *:focus,
+  *:active {
+    outline: 0 !important;
+  }
+
+  a,
+  button {
+   transition: opacity .3s;
+  }
+
+  a:hover,
+  a:active,
+  button:hover,
+  button:active {
+    opacity: .9;
+  }
+`
+
+export default GlobalStyles

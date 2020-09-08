@@ -1,0 +1,1 @@
+# gatsby-starter-styled-components

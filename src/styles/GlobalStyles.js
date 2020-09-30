@@ -59,6 +59,10 @@ const GlobalStyles = createGlobalStyle`
   button:active {
     opacity: .9;
   }
+
+  img {
+    max-width: 100%;
+  }
 `
 
 export default GlobalStyles

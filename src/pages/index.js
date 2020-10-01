@@ -5,7 +5,7 @@ import { Layout } from '../styles/PageLayout'
 
 const HomePage = () => (
   <Page>
-    <Layout>This is Home Page</Layout>
+    <Layout>Hey you</Layout>
   </Page>
 )
 

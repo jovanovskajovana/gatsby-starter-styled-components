@@ -20,7 +20,7 @@ npm install -g gatsby-cli
 gatsby new your-project-name https://github.com/jovanovskajovana/gatsby-starter-styled-components.git
 ```
 
-> Create new poject from this starter. Don't forget to name it as you wish, navigate to that directory, run `npm run dev` and start the development mode available at http://localhost:8000.
+> Create new poject from this starter. Remember to name it as you wish, navigate to that directory, run `npm run dev` and start the development mode available at http://localhost:8000.
 
 ## 🧐 Dive deeper
 
@@ -29,13 +29,23 @@ gatsby new your-project-name https://github.com/jovanovskajovana/gatsby-starter-
 - [Typography](#typography)
 - [Image](#image)
 - [Theming](#theming)
-- [Browser and SSR](#wrapPageElement)
 - [SEO](#seo)
+- [Browser and SSR](#wrapPageElement)
 - [Deploy](#deploy)
 
 ### Styled Components
 
-Lorem ipsum
+Think of a reusable modules of the site and create a styled component for them. The rule of a thumb is to wrap each logical part to its own layout and nest all of the children selectors.
+
+```
+Example styled layout
+```
+
+You can create your own global styles normalizer with `createGlobalStyle`. Put it at the top of the main [Layout](#layout) component to share it over all pages.
+
+```
+Example global styles
+```
 
 ### Layout and Link
 

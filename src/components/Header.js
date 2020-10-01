@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+import HeaderLayout from '../styles/HeaderLayout'
+
 const Header = () => (
-  <div>
-    <Link to="/">Home</Link>
-    <Link to="/blog">Blog</Link>
-  </div>
+  <HeaderLayout>
+    <Link to="/contact">let's connect</Link>
+  </HeaderLayout>
 )
 
 export default Header

@@ -1,7 +1,7 @@
 const theme = {
-  backgroundPrimary: '#fff',
+  backgroundPrimary: '#e6e2d6',
   backgroundDark: '#131e20',
-  textPrimary: '#000',
+  textPrimary: '#041973',
   textSecondary: '#25252f',
   textHiglight: '#d14258',
   width: '100%',

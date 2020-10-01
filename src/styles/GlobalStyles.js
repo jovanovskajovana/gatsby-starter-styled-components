@@ -23,6 +23,7 @@ const GlobalStyles = createGlobalStyle`
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-y: none;
+    font-size: 16px;
   }
 
   ul,

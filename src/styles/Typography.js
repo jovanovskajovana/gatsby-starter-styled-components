@@ -48,14 +48,10 @@ const Typography = createGlobalStyle`
     font-style: italic;
     font-weight: 200;
   }
-
-  html, body {
-    font-family: Ubuntu, sans-serif;
-  }
 `
 
 const Headline = styled.h1`
-  font-size: 2.4rem;
+  font-size: 3rem;
   font-weight: 600;
 `
 

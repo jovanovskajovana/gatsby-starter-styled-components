@@ -2,7 +2,7 @@
 
 Here is a ready-to-use [Gatsby](https://www.gatsbyjs.com/) starter with Styled Components, ESLint, SEO optimization and more.
 
-<img src='./src/assets/images/logo-gatsby-styled-components.png' width='370'>
+<img src='./src/assets/images/logo-gatsby-styled-components.png' width='340'>
 
 ## 🚀 Setup
 
@@ -25,7 +25,8 @@ gatsby new your-project-name https://github.com/jovanovskajovana/gatsby-starter-
 ## 🧐 Dive deeper
 
 - [Styled Components](#styled-components)
-- [Layout and Link](#layout-and-link)
+- [Layout](#layout)
+- [Link](#link)
 - [Typography](#typography)
 - [Image](#image)
 - [Theming](#theming)
@@ -35,7 +36,7 @@ gatsby new your-project-name https://github.com/jovanovskajovana/gatsby-starter-
 
 ### Styled Components
 
-Think of a reusable modules of the site and create a styled component for them. The rule of a thumb is to wrap each logical part to its own layout and nest all of the children selectors.
+Think of a reusable modules in the site and create a styled component for them. The rule of a thumb is to wrap each logical part to its own layout and nest all of the children selectors.
 
 ```
 Example styled layout
@@ -47,7 +48,11 @@ You can create your own global styles normalizer with `createGlobalStyle`. Put i
 Example global styles
 ```
 
-### Layout and Link
+### Layout
+
+Lorem ipsum
+
+### Link
 
 Lorem ipsum
 
@@ -61,7 +66,11 @@ Lorem ipsum
 
 ### Theming
 
-Lorem ipsum
+Notice how we added the `ThemeProvider` component at the top of our layout. That will give an access to the theme variables to all styled-components in the render tree.
+
+```
+Example theming
+```
 
 ### Browser and SSR
 

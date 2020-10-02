@@ -14,13 +14,13 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-style: normal;
     font-stretch: normal;
-    font-family: 'Roboto', sans-serif;
+    font-family: Ubuntu, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: normal;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-y: none;
     font-size: 16px;

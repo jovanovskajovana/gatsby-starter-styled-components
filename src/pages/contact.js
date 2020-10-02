@@ -1,12 +1,13 @@
 import React from 'react'
 
 import Page from '../components/Page'
+import { Headline } from '../styles/Typography'
 import { Layout } from '../styles/PageLayout'
 
-const BlogPage = () => (
+const ContactPage = () => (
   <Page>
-    <Layout>let's connect</Layout>
+    <Headline>click here</Headline>
   </Page>
 )
 
-export default BlogPage
+export default ContactPage

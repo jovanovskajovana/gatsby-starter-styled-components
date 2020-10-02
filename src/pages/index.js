@@ -7,7 +7,7 @@ import { Headline } from '../styles/Typography'
 const HomePage = () => (
   <Page>
     <Layout>
-      <Headline>hey you</Headline>
+      <Headline>hi, you</Headline>
     </Layout>
   </Page>
 )

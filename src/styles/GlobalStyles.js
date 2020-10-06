@@ -13,7 +13,7 @@ const GlobalStyles = createGlobalStyle`
   html,
   body {
     font-size: 16px;
-    line-height: 1.2;
+    line-height: 1.5;
     font-style: normal;
     font-stretch: normal;
     font-family: Ubuntu, sans-serif;
@@ -25,7 +25,6 @@ const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-y: none;
- 
   }
 
   ul,
@@ -35,6 +34,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   a {
+    color: inherit;
     text-decoration: none;
   }
 

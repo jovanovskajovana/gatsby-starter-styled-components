@@ -6,7 +6,7 @@ Here is a ready-to-use [Gatsby](https://www.gatsbyjs.com/) starter with Styled C
 
 ## 🚀 Setup
 
-With Gatsby, we can write React-based components that will be turned into static HTML, CSS, and JS at build time. Splitting the code by components makes it faster for users to load only what they need, and with route-based prefetching to get data based on the page they are currently on. All page content is server-side rendered, leading to extremely fast loading times and further optimization for search engine crawlers.
+With Gatsby, we can write React-based components that will be turned into static HTML, CSS, and JS at build time. Splitting the code by components makes it faster for users to load only what they need, and with route-based prefetching, to get data based on the page they are currently on. All page content is server-side rendered, leading to extremely fast loading times and further optimization for search engine crawlers.
 
 #### Basic setup
 
@@ -36,21 +36,76 @@ gatsby new your-project-name https://github.com/jovanovskajovana/gatsby-starter-
 
 ### Styled Components
 
-Think of a reusable modules in the site and create a styled component for them. The rule of a thumb is to wrap each logical part to its own layout and nest all of the children selectors.
+Think of all the reusable modules on the site and create a styled component for them. The rule of thumb is that each logical part, such as Header, Button, Input, or Pagination, turns into its own layout and nests all of its children selectors.
 
 ```
-Example styled layout
+import styled from 'styled-components'
+
+const HeaderLayout = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 3rem 10rem;
+
+  a {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: ${(props) => props.theme.textPrimary};
+  }
+`
+
+export default HeaderLayout
 ```
 
-You can create your own global styles normalizer with `createGlobalStyle`. Put it at the top of the main [Layout](#layout) component to share it over all pages.
+> First you need to define styled properties for the element. It can be `div`, `p`, any other element or extension of [an already created styled component](./src/styles/ButtonLayout.js). Then simply import it to wrap any sub-elements or content that needs to be stylized.
 
 ```
-Example global styles
+import React from 'react'
+import { Link } from 'gatsby'
+
+import HeaderLayout from '../styles/HeaderLayout'
+
+const Header = ({ mode, toggleMode }) => (
+  <HeaderLayout>
+    <Link to="/contact">let's connect</Link>
+    <Link to="/">go back home</Link>
+  </HeaderLayout>
+)
+
+export default Header
+```
+
+You can also create your own global style normalizer with `createGlobalStyle`. Place it on top of the main [Layout](#layout) component to ensure that it is shared over all pages.
+
+```
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyles = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  html,
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: Ubuntu, sans-serif;
+  }
+
+  ...
+`
+
+export default GlobalStyles
 ```
 
 ### Layout
 
-Lorem ipsum
+Most likely, you would like to have a general site structure with header, footer, centered container, some global styles, and so on. Create a generic Page component
 
 ### Link
 
@@ -62,7 +117,8 @@ Lorem ipsum
 
 ### Image
 
-Lorem ipsum
+1. Static import with Webpack
+2.
 
 ### Theming
 
@@ -74,7 +130,7 @@ Example theming
 
 ### Browser and SSR
 
-Lorem ipsum
+After setting the layout we should make sure that all the common components and styles do not unmount on page change.
 
 ### SEO
 

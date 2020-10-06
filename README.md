@@ -79,7 +79,7 @@ const Header = () => (
 export default Header
 ```
 
-You can also create your own global style normalizer with `createGlobalStyle`. Place it on top of the main [Layout](#layout) component to ensure that it is shared over all pages.
+You can also create your own global style normalizer with `createGlobalStyle`. Place the GlobalStyles on top of the main [Layout](#layout) component to ensure that it is shared over all pages.
 
 ```
 import { createGlobalStyle } from 'styled-components'
@@ -105,7 +105,30 @@ export default GlobalStyles
 
 ### Layout
 
-Most likely, you would like to have a general site structure with header, footer, centered container, some global styles, and so on. Create a generic Page component
+Most likely, you will like to have a general site structure with header, footer, centered container, some global styles, and so on. Create a generic Page component with a logically structured tree that will wrap all the `children` elements passed from [different pages](./src/pages/contact.js).
+
+```
+import React from 'react'
+
+import GlobalStyles from '../styles/GlobalStyles'
+import { PageLayout } from '../styles/PageLayout'
+import { Typography } from '../styles/Typography'
+
+import Header from './Header'
+
+const Page = ({ children }) => {
+  return (
+    <>
+      <GlobalStyles />
+      <Typography />
+      <Header mode={mode} toggleMode={toggleMode} />
+      <PageLayout>{children}</PageLayout>
+    </>
+  )
+}
+
+export default Page
+```
 
 ### Link
 

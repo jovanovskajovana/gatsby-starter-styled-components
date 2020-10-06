@@ -8,7 +8,7 @@ Here is a ready-to-use [Gatsby](https://www.gatsbyjs.com/) starter with Styled C
 
 With Gatsby, we can write React-based components that will be turned into static HTML, CSS, and JS at build time. Splitting the code by components makes it faster for users to load only what they need, and with route-based prefetching, to get data based on the page they are currently on. All page content is server-side rendered, leading to extremely fast loading times and further optimization for search engine crawlers.
 
-#### Basic setup
+### Basic setup
 
 ```
 npm install -g gatsby-cli
@@ -20,7 +20,7 @@ npm install -g gatsby-cli
 gatsby new your-project-name https://github.com/jovanovskajovana/gatsby-starter-styled-components.git
 ```
 
-> Create new poject from this starter. Remember to name it as you wish, navigate to that directory, run `npm run dev` and start the development mode available at http://localhost:8000.
+> Create new poject from this starter. Remember to name it as you wish, navigate to the directory, run `npm run dev` and start the development mode available at http://localhost:8000.
 
 ## 🧐 Dive deeper
 
@@ -36,7 +36,7 @@ gatsby new your-project-name https://github.com/jovanovskajovana/gatsby-starter-
 
 ### Styled Components
 
-Think of all the reusable modules on the site and create a styled component for them. The rule of thumb is that each logical part, such as Header, Button, Input, or Pagination, turns into its own layout and nests all of its children selectors.
+Think of all the reusable modules on the site and create a styled component for each. The rule of thumb is that any logical part, such as Header, Button, Input, or Pagination, turns into its own layout and nests all of its children selectors.
 
 ```
 import styled from 'styled-components'
@@ -61,7 +61,7 @@ const HeaderLayout = styled.div`
 export default HeaderLayout
 ```
 
-> First you need to define styled properties for the element. It can be `div`, `p`, any other element or extension of [an already created styled component](./src/styles/ButtonLayout.js). Then simply import it to wrap any sub-elements or content that needs to be stylized.
+> First you need to define styled properties for the element. It can be `div`, `p`, any other element or extension of an [already created styled component](./src/styles/ButtonLayout.js). Then simply import it to wrap any sub-elements or content that needs to be stylized.
 
 ```
 import React from 'react'
@@ -69,7 +69,7 @@ import { Link } from 'gatsby'
 
 import HeaderLayout from '../styles/HeaderLayout'
 
-const Header = ({ mode, toggleMode }) => (
+const Header = () => (
   <HeaderLayout>
     <Link to="/contact">let's connect</Link>
     <Link to="/">go back home</Link>

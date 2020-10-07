@@ -20,6 +20,7 @@ const Typography = createGlobalStyle`
     src: url(${fontBoldItalic});
     font-style: italic;
     font-weight: 600;
+  }
 
   @font-face {
     font-family: 'Ubuntu';

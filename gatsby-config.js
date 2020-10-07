@@ -4,5 +4,5 @@ module.exports = {
     siteUrl: 'https://gatsby-styled-components',
     description: 'Gatsby starter with modular file structure and support for Styled Components',
   },
-  plugins: ['gatsby-plugin-react-helmet', 'gatsby-plugin-styled-components'],
+  plugins: ['gatsby-plugin-styled-components', 'gatsby-plugin-react-helmet'],
 }

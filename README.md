@@ -24,7 +24,7 @@ gatsby new your-project-name https://github.com/jovanovskajovana/gatsby-starter-
 
 <br/>
 
-## 🔎 Dive deeper
+## 🕵️‍♀️ Dive deeper
 
 - [Styled Components](#styled-components)
 - [Layout](#layout)

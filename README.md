@@ -144,22 +144,50 @@ Lorem ipsum
 
 Lorem ipsum
 
+<!-- After setting the layout we should make sure that all the common components and styles do not unmount on page change.  -->
+
 ### Image
 
 1. Static import with Webpack
-2.
+2. Graphql
 
 ### Theming
 
-Notice how we added the `ThemeProvider` component at the top of our layout. That will give an access to the theme variables to all styled-components in the render tree.
+Notice how we added the `ThemeProvider` component to the top of the layout. That will give an access to the theme variables to all the styled-components in the render tree. In addition, it makes it extremely easy for you to create a dark / light theme mode or allow the user to select any of the color palette options you will offer in the [theme](./src/constants/themes.js) object.
 
 ```
-Example theming
+import React, { useEffect } from 'react'
+import { ThemeProvider } from 'styled-components'
+
+import GlobalStyles from '../styles/GlobalStyles'
+import { PageLayout } from '../styles/PageLayout'
+import { Typography } from '../styles/Typography'
+import theme from '../constants/theme'
+import { useTheme } from '../hooks/useTheme'
+
+import Header from './Header'
+
+const Page = ({ children }) => {
+  const [mode, toggleMode] = useTheme()
+
+  const themeMode = mode === 'light' ? theme.light : theme.dark
+
+  return (
+    <ThemeProvider theme={themeMode}>
+      <GlobalStyles />
+      <Typography />
+      <Header mode={mode} toggleMode={toggleMode} />
+      <PageLayout>{children}</PageLayout>
+    </ThemeProvider>
+  )
+}
+
+export default Page
 ```
+
+> Our `useTheme()` [custom hook](./src/hooks/useTheme.js) captures the user's preferred mode and saves it in local storage.
 
 ### Gatsby Browser and Gatsby SSR
-
-<!-- After setting the layout we should make sure that all the common components and styles do not unmount on page change.  -->
 
 As your site grows bigger, you don't want to go trough every single page and wrap the [Layout](#layout) component around it. Instead, you can use the Gatsby [wrapPageElement](https://www.gatsbyjs.com/docs/ssr-apis/#wrapPageElement) plugin, which will be defined in the [gatsby-ssr.js](https://www.gatsbyjs.com/docs/api-files-gatsby-browser) and [gatsby-browser.js](https://www.gatsbyjs.com/docs/api-files-gatsby-ssr/) files at the root of your project to automatically wrap your layout.
 

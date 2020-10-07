@@ -16,7 +16,7 @@ const GlobalStyles = createGlobalStyle`
     line-height: 1.5;
     font-style: normal;
     font-stretch: normal;
-    font-family: Ubuntu, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: normal;

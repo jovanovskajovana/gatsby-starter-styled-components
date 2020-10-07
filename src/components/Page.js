@@ -16,8 +16,8 @@ const Page = ({ children }) => {
 
   return (
     <ThemeProvider theme={themeMode}>
-      <GlobalStyles />
       <Typography />
+      <GlobalStyles />
       <Header mode={mode} toggleMode={toggleMode} />
       <PageLayout>{children}</PageLayout>
     </ThemeProvider>

@@ -1,6 +1,6 @@
 # Gatsby starter with Styled Components
 
-Here is a ready-to-use [Gatsby](https://www.gatsbyjs.com/) starter with Styled Components, ESLint, SEO optimization and more.
+Here is a ready-to-use [Gatsby](https://www.gatsbyjs.com/) starter with [Styled Components](https://styled-components.com/), ESLint, SEO optimization and more.
 
 <img src='./src/assets/images/logo-gatsby-styled-components.png' width='340'>
 
@@ -22,6 +22,8 @@ gatsby new your-project-name https://github.com/jovanovskajovana/gatsby-starter-
 
 > Create new poject from this starter. Remember to name it as you wish, navigate to the directory, run `npm run dev` and start the development mode available at http://localhost:8000.
 
+<br/>
+
 ## 🧐 Dive deeper
 
 - [Styled Components](#styled-components)
@@ -36,7 +38,7 @@ gatsby new your-project-name https://github.com/jovanovskajovana/gatsby-starter-
 
 ### Styled Components
 
-Think of all the reusable modules on the site and create a styled component for each. The rule of thumb is that any logical part, such as Header, Button, Input, or Pagination, turns into its own layout and nests all of its children selectors.
+Think of all the reusable modules on the site and create a styled component for each. The rule of thumb is that any logical part, such as header, button, input, or pagination, turns into its own layout and nests all of its children selectors.
 
 ```
 import styled from 'styled-components'
@@ -61,7 +63,7 @@ const HeaderLayout = styled.div`
 export default HeaderLayout
 ```
 
-> First you need to define styled properties for the element. It can be `div`, `p`, any other element or extension of an [already created styled component](./src/styles/ButtonLayout.js). Then simply import it to wrap any sub-elements or content that needs to be stylized.
+> First you need to define styled properties for the element. It can be `div`, `p`, any other element, or extension of an [already created styled component](./src/styles/ButtonLayout.js).
 
 ```
 import React from 'react'
@@ -78,6 +80,10 @@ const Header = () => (
 
 export default Header
 ```
+
+> Then simply import it to wrap any sub-elements or content that needs to be stylized.
+
+<br/>
 
 You can also create your own global style normalizer with `createGlobalStyle`. Place the GlobalStyles on top of the main [Layout](#layout) component to ensure that it is shared over all pages.
 
@@ -105,7 +111,7 @@ export default GlobalStyles
 
 ### Layout
 
-Most likely, you will like to have a general site structure with header, footer, centered container, some global styles, and so on. Create a generic Page component with a logically structured tree that will wrap all the `children` elements passed from [different pages](./src/pages/contact.js).
+Most likely, you will like to have a general site structure with header, footer, centered container, some global styles, and so on. Create a generic Page component with a logically structured tree that will wrap all the `children` elements passed from [different pages](./src/pages/wrappedLayout.js).
 
 ```
 import React from 'react'
@@ -151,9 +157,21 @@ Notice how we added the `ThemeProvider` component at the top of our layout. That
 Example theming
 ```
 
-### Browser and SSR
+### Gatsby Browser and Gatsby SSR
 
-After setting the layout we should make sure that all the common components and styles do not unmount on page change.
+<!-- After setting the layout we should make sure that all the common components and styles do not unmount on page change.  -->
+
+As your site grows bigger, you don't want to go trough every single page and wrap the [Layout](#layout) component around it. Instead, you can use the Gatsby [wrapPageElement](https://www.gatsbyjs.com/docs/ssr-apis/#wrapPageElement) plugin, which will be defined in the [gatsby-ssr.js](https://www.gatsbyjs.com/docs/api-files-gatsby-browser) and [gatsby-browser.js](https://www.gatsbyjs.com/docs/api-files-gatsby-ssr/) files at the root of your project to automatically wrap your layout.
+
+```
+import React from 'react'
+
+import Page from './src/components/Page'
+
+export function wrapPageElement({ element, props }) {
+  return <Page {...props}>{element}</Page>
+}
+```
 
 ### SEO
 

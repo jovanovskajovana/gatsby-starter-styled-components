@@ -5,11 +5,9 @@ import { Layout } from '../styles/PageLayout'
 import { Headline } from '../styles/Typography'
 
 const HomePage = () => (
-  <Page>
-    <Layout>
-      <Headline>hi, you</Headline>
-    </Layout>
-  </Page>
+  <Layout>
+    <Headline>hi, you</Headline>
+  </Layout>
 )
 
 export default HomePage

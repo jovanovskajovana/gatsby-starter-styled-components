@@ -5,11 +5,9 @@ import { Layout } from '../styles/PageLayout'
 import { Headline } from '../styles/Typography'
 
 const ContactPage = () => (
-  <Page>
-    <Layout>
-      <Headline>click here</Headline>
-    </Layout>
-  </Page>
+  <Layout>
+    <Headline>click here</Headline>
+  </Layout>
 )
 
 export default ContactPage

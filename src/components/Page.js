@@ -1,5 +1,6 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
+import { Helmet } from 'react-helmet'
 
 import GlobalStyles from '../styles/GlobalStyles'
 import { PageLayout } from '../styles/PageLayout'
@@ -16,7 +17,10 @@ const Page = ({ children }) => {
 
   return (
     <ThemeProvider theme={themeMode}>
-      <Typography />
+      {/* <Typography /> */}
+      <Helmet>
+        <link href='https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap' rel='stylesheet' />
+      </Helmet>
       <GlobalStyles />
       <Header mode={mode} toggleMode={toggleMode} />
       <PageLayout>{children}</PageLayout>

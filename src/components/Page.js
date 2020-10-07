@@ -15,12 +15,14 @@ const Page = ({ children }) => {
   const themeMode = mode === 'light' ? theme.light : theme.dark
 
   return (
-    <ThemeProvider theme={themeMode}>
-      <Typography />
+    <>
       <GlobalStyles />
-      <Header mode={mode} toggleMode={toggleMode} />
-      <PageLayout>{children}</PageLayout>
-    </ThemeProvider>
+      <Typography />
+      <ThemeProvider theme={themeMode}>
+        <Header mode={mode} toggleMode={toggleMode} />
+        <PageLayout>{children}</PageLayout>
+      </ThemeProvider>
+    </>
   )
 }
 

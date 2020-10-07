@@ -28,12 +28,12 @@ gatsby new your-project-name https://github.com/jovanovskajovana/gatsby-starter-
 
 - [Styled Components](#styled-components)
 - [Layout](#layout)
-- [Link](#link)
 - [Typography](#typography)
-- [Image](#image)
 - [Theming](#theming)
+- [Link](#link)
+- [Image](#image)
+- [Browser and SSR](#gatsby-browser-and-gatsby-ssr)
 - [SEO](#seo)
-- [Browser and SSR](#wrapPageElement)
 - [Deploy](#deploy)
 
 ### Styled Components
@@ -136,24 +136,15 @@ const Page = ({ children }) => {
 export default Page
 ```
 
-### Link
-
-Lorem ipsum
-
 ### Typography
 
 Lorem ipsum
 
 <!-- After setting the layout we should make sure that all the common components and styles do not unmount on page change.  -->
 
-### Image
-
-1. Static import with Webpack
-2. Graphql
-
 ### Theming
 
-Notice how we added the `ThemeProvider` component to the top of the layout. That will give an access to the theme variables to all the styled-components in the render tree. In addition, it makes it extremely easy for you to create a dark / light theme mode or allow the user to select any of the color palette options you will offer in the [theme](./src/constants/themes.js) object.
+Notice how we added the `ThemeProvider` component to the top of the layout. That will give an access to the theme variables to all the styled-components in the render tree. In addition, it makes it extremely easy for you to create a dark / light theme mode or allow the user to select any of the color palette options you will offer in the [theme](./src/constants/theme.js) object.
 
 ```
 import React, { useEffect } from 'react'
@@ -185,11 +176,20 @@ const Page = ({ children }) => {
 export default Page
 ```
 
-> Our `useTheme()` [custom hook](./src/hooks/useTheme.js) captures the user's preferred mode and saves it in local storage.
+> With the `useTheme()` [custom hook](./src/hooks/useTheme.js) you can captur the user's preferred mode and save it in local storage.
+
+### Link
+
+Lorem ipsum
+
+### Image
+
+1. Static import with Webpack
+2. Graphql
 
 ### Gatsby Browser and Gatsby SSR
 
-As your site grows bigger, you don't want to go trough every single page and wrap the [Layout](#layout) component around it. Instead, you can use the Gatsby [wrapPageElement](https://www.gatsbyjs.com/docs/ssr-apis/#wrapPageElement) plugin, which will be defined in the [gatsby-ssr.js](https://www.gatsbyjs.com/docs/api-files-gatsby-browser) and [gatsby-browser.js](https://www.gatsbyjs.com/docs/api-files-gatsby-ssr/) files at the root of your project to automatically wrap your layout.
+As your site grows bigger, you don't want to go trough every single page and wrap the [Layout](#layout) component around it. Instead, you can use the Gatsby [wrapPageElement](https://www.gatsbyjs.com/docs/ssr-apis/#wrapPageElement) plugin, which will be defined in the [gatsby-ssr.js](https://www.gatsbyjs.com/docs/api-files-gatsby-ssr) and [gatsby-browser.js](https://www.gatsbyjs.com/docs/api-files-gatsby-browser/) files at the root of your project to automatically wrap your layout.
 
 ```
 import React from 'react'

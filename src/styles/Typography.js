@@ -9,41 +9,41 @@ import fontLightItalic from '../assets/fonts/Ubuntu-LightItalic.ttf'
 
 const Typography = createGlobalStyle`
   @font-face {
-    font-family: Ubuntu;
+    font-family: 'Ubuntu';
     src: url(${fontBold});
     font-style: normal;
     font-weight: 600;
   }
 
   @font-face {
-    font-family: Ubuntu;
+    font-family: 'Ubuntu';
     src: url(${fontBoldItalic});
     font-style: italic;
     font-weight: 600;
 
   @font-face {
-    font-family: Ubuntu;
+    font-family: 'Ubuntu';
     src: url(${fontRegular});
     font-style: normal;
     font-weight: 400;
   }
 
   @font-face {
-    font-family: Ubuntu;
+    font-family: 'Ubuntu';
     src: url(${fontItalic});
     font-style: italic;
     font-weight: 400;
   }
 
   @font-face {
-    font-family: Ubuntu;
+    font-family: 'Ubuntu';
     src: url(${fontLight});
     font-style: normal;
     font-weight: 200;
   }
 
   @font-face {
-    font-family: Ubuntu;
+    font-family: 'Ubuntu';
     src: url(${fontLightItalic});
     font-style: italic;
     font-weight: 200;

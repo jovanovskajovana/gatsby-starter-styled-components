@@ -140,6 +140,8 @@ export default Page
 
 Lorem ipsum
 
+gatsby-plugin-styled-components surfaces the critical CSS to Gatsby and in that way Gatsby is able to figure out what the critical CSS is and serves it before the site is rendered / prevents jumping..
+
 <!-- After setting the layout we should make sure that all the common components and styles do not unmount on page change.  -->
 
 ### Theming

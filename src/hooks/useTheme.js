@@ -15,7 +15,6 @@ export const useTheme = () => {
   useEffect(() => {
     const localTheme = window.localStorage.getItem('theme')
     localTheme && setTheme(localTheme)
-    console.log('it rerenders')
   }, [])
 
   return [mode, toggleMode]

@@ -13,6 +13,7 @@ const Typography = createGlobalStyle`
     src: url(${fontBold});
     font-style: normal;
     font-weight: 600;
+    font-display: fallback;
   }
 
   @font-face {
@@ -20,6 +21,7 @@ const Typography = createGlobalStyle`
     src: url(${fontBoldItalic});
     font-style: italic;
     font-weight: 600;
+    font-display: fallback;
   }
 
   @font-face {
@@ -27,6 +29,7 @@ const Typography = createGlobalStyle`
     src: url(${fontRegular});
     font-style: normal;
     font-weight: 400;
+    font-display: fallback;
   }
 
   @font-face {
@@ -34,6 +37,7 @@ const Typography = createGlobalStyle`
     src: url(${fontItalic});
     font-style: italic;
     font-weight: 400;
+    font-display: fallback;
   }
 
   @font-face {
@@ -41,6 +45,7 @@ const Typography = createGlobalStyle`
     src: url(${fontLight});
     font-style: normal;
     font-weight: 200;
+    font-display: fallback;
   }
 
   @font-face {
@@ -48,6 +53,7 @@ const Typography = createGlobalStyle`
     src: url(${fontLightItalic});
     font-style: italic;
     font-weight: 200;
+    font-display: fallback;
   }
 `
 

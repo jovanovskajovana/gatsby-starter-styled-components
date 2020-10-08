@@ -209,13 +209,13 @@ const Page = ({ children }) => {
 export default Page
 ```
 
-> With the `useTheme()` [custom hook](./src/hooks/useTheme.js) you can capture the user's preferred mode and save it to local storage.
+> With the `useTheme()` [custom hook](./src/hooks/useTheme.js) you can capture user's preferred mode and save it to local storage.
 
 ### Link
 
 All the basic styling is ready and you need to create a few pages. Pages can be [dynamically generated](https://www.gatsbyjs.com/docs/node-apis/#createPages) or they can be created in a file system routing. So go to the `pages/` directory and in addition to `index.js` as the starting point of the site, create the other pages you need.
 
-Now Gatsby will handle the (routing)[https://www.gatsbyjs.com/docs/routing/] by creating a path for each page. Instead of using an anchor link that will reload the entire page, you will need to connect them with Gatsby (Link)[https://www.gatsbyjs.com/docs/gatsby-link/] and get the preloaded page content blazingly fast each time you click.
+Now Gatsby will handle the [routing](https://www.gatsbyjs.com/docs/routing/) by creating a path for each page. Instead of using an anchor link that will reload the entire page, you will need to connect them with Gatsby [Link](https://www.gatsbyjs.com/docs/gatsby-link/) and get the preloaded page content blazingly fast on each click.
 
 ```
 import React from 'react'
@@ -234,9 +234,9 @@ const NotFoundPage = () => (
 export default NotFoundPage
 ```
 
-> If the user visits a page that doesn't exist, Gatsby will render page 404 by default, but you'll probably want to have a custom backup page for that.
+> If the user visits a page that doesn't exist, Gatsby will render 404 by default, but you'll probably want to have a custom page for that.
 
-Link is for Gatsby-only pages, and you can still use the standard `<a>` element for all external links.
+Link is intended for Gatsby-only pages, for all external connections, you can still use the standard <a> element.
 
 ### Image
 

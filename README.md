@@ -163,15 +163,15 @@ const Typography = createGlobalStyle`
 
   ...
 `
-const Title = styled.h2`
-  font-size: 1.5em;
-  font-weight: 600;
+const Paragraph = styled.p`
+  font-size: 0.8em;
+  font-weight: 400;
 `
 
-export { Typography, Title }
+export { Typography, Paragraph }
 ```
 
-> Simply by importing font files into the Typography(./src/styles/Typography.js), it creates a URL with a unique identifier that you can use when declaring the`@font-face`. Just remember to set the right font-family in your [GlobalStyles](./src/styles/GlobalStyles.js) and also set the Typography component on top of the main [Layout](#layout).
+> Simply by importing font files into the [Typography](./src/styles/Typography.js), it creates a URL with a unique identifier that you can use when declaring the`@font-face`. Just remember to set the right font-family in your [GlobalStyles](./src/styles/GlobalStyles.js) and also set the Typography component on top of the main [Layout](#layout).
 
 ### Theming
 

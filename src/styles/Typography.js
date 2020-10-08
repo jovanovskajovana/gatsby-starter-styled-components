@@ -69,7 +69,7 @@ const Subtitle = styled.h3`
 
 const Paragraph = styled.p`
   font-size: 0.8em;
-  font-weight: normal;
+  font-weight: 400;
 `
 
 export { Typography, Headline, Title, Subtitle, Paragraph }

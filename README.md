@@ -175,10 +175,10 @@ export { Typography, Paragraph }
 
 ### Theming
 
-Notice how we added the `ThemeProvider` component to the top of the layout. That will give an access to the theme variables to all the styled-components in the render tree. In addition, it makes it extremely easy for you to create a dark / light theme mode or allow the user to select any of the color palette options you will offer in the [theme](./src/constants/theme.js) object.
+Notice how we added a `ThemeProvider` around the main page layout. That will give an access to the theme variables to all the styled-components in the render tree. In addition, it makes it pretty easy for you to create a dark / light theme mode or allow the user to select any of the color palette options you will offer in the [theme](./src/constants/theme.js) object.
 
 ```
-import React, { useEffect } from 'react'
+import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import GlobalStyles from '../styles/GlobalStyles'
@@ -195,23 +195,48 @@ const Page = ({ children }) => {
   const themeMode = mode === 'light' ? theme.light : theme.dark
 
   return (
-    <ThemeProvider theme={themeMode}>
+    <>
       <GlobalStyles />
       <Typography />
-      <Header mode={mode} toggleMode={toggleMode} />
-      <PageLayout>{children}</PageLayout>
-    </ThemeProvider>
+      <ThemeProvider theme={themeMode}>
+        <Header mode={mode} toggleMode={toggleMode} />
+        <PageLayout>{children}</PageLayout>
+      </ThemeProvider>
+    </>
   )
 }
 
 export default Page
 ```
 
-> With the `useTheme()` [custom hook](./src/hooks/useTheme.js) you can captur the user's preferred mode and save it in local storage.
+> With the `useTheme()` [custom hook](./src/hooks/useTheme.js) you can capture the user's preferred mode and save it to local storage.
 
 ### Link
 
-Lorem ipsum
+All the basic styling is ready and you need to create a few pages. Pages can be [dynamically generated](https://www.gatsbyjs.com/docs/node-apis/#createPages) or they can be created in a file system routing. So go to the `pages/` directory and in addition to `index.js` as the starting point of the site, create the other pages you need.
+
+Now Gatsby will handle the (routing)[https://www.gatsbyjs.com/docs/routing/] by creating a path for each page. Instead of using an anchor link that will reload the entire page, you will need to connect them with Gatsby (Link)[https://www.gatsbyjs.com/docs/gatsby-link/] and get the preloaded page content blazingly fast each time you click.
+
+```
+import React from 'react'
+import { Link } from 'gatsby'
+
+import { Layout } from '../styles/PageLayout'
+import { Headline } from '../styles/Typography'
+
+const NotFoundPage = () => (
+  <Layout column>
+    <Headline>Oops, where did this page come from?</Headline>
+    <Link to="/">← go back home</Link>
+  </Layout>
+)
+
+export default NotFoundPage
+```
+
+> If the user visits a page that doesn't exist, Gatsby will render page 404 by default, but you'll probably want to have a custom backup page for that.
+
+Link is for Gatsby-only pages, and you can still use the standard `<a>` element for all external links.
 
 ### Image
 

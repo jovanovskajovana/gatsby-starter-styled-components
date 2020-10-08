@@ -1,12 +1,12 @@
 # Gatsby starter with Styled Components
 
-Here is a ready-to-use [Gatsby](https://www.gatsbyjs.com/) starter with [Styled Components](https://styled-components.com/), ESLint, SEO optimization and more.
+Here is a ready-to-use Gatsby starter with Styled Components, ESLint, SEO optimization and more.
 
 <img src='./src/assets/images/logo-gatsby-styled-components.png' width='340'>
 
 ## 🚀 Setup
 
-With Gatsby, we can write React-based components that will be turned into static HTML, CSS, and JS at build time. Splitting the code by components makes it faster for users to load only what they need, and with route-based prefetching, to get data based on the page they are currently on. All page content is server-side rendered, leading to extremely fast loading times and further optimization for search engine crawlers.
+With [Gatsby](https://www.gatsbyjs.com/), we can write React-based components that will be turned into static HTML, CSS, and JS at build time. Splitting the code by components makes it faster for users to load only what they need, and with route-based prefetching, to get data based on the page they are currently on. All page content is server-side rendered, leading to extremely fast loading times and further optimization for search engine crawlers.
 
 ### Basic setup
 
@@ -38,7 +38,7 @@ gatsby new your-project-name https://github.com/jovanovskajovana/gatsby-starter-
 
 ### Styled Components
 
-Think of all the reusable modules on the site and create a styled component for each. The rule of thumb is that any logical part, such as header, button, input, or pagination, turns into its own layout and nests all of its children selectors.
+Think of all the reusable modules on the site and create a [styled component](https://styled-components.com/) for each. The rule of thumb is that any logical part, such as header, button, input, or pagination, turns into its own layout and nests all of the children selectors.
 
 ```
 import styled from 'styled-components'
@@ -100,7 +100,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Ubuntu, sans-serif;
+    font-family: "Ubuntu", sans-serif;
   }
 
   ...
@@ -138,11 +138,40 @@ export default Page
 
 ### Typography
 
-Lorem ipsum
+Depending on the source of the fonts, you can choose a [different approach](https://www.gatsbyjs.com/docs/working-with-fonts-and-typography/) to include them in the site. When working with custom fonts, you can host them locally in the `assets/fonts` directory, and Gatsby will make sure they are moved to a static folder, included in the page header, and served before the site is rendered.
 
-gatsby-plugin-styled-components surfaces the critical CSS to Gatsby and in that way Gatsby is able to figure out what the critical CSS is and serves it before the site is rendered / prevents jumping..
+```
+import styled, { createGlobalStyle } from 'styled-components'
 
-<!-- After setting the layout we should make sure that all the common components and styles do not unmount on page change.  -->
+import fontRegular from '../assets/fonts/Ubuntu-Regular.ttf'
+import fontItalic from '../assets/fonts/Ubuntu-Italic.ttf'
+
+const Typography = createGlobalStyle`
+  @font-face {
+    font-family: 'Ubuntu';
+    src: url(${fontRegular});
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'Ubuntu';
+    src: url(${fontItalic});
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  ...
+`
+const Title = styled.h2`
+  font-size: 1.5em;
+  font-weight: 600;
+`
+
+export { Typography, Title }
+```
+
+> Simply by importing font files into the Typography(./src/styles/Typography.js), it creates a URL with a unique identifier that you can use when declaring the`@font-face`. Just remember to set the right font-family in your [GlobalStyles](./src/styles/GlobalStyles.js) and also set the Typography component on top of the main [Layout](#layout).
 
 ### Theming
 

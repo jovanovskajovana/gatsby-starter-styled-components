@@ -127,7 +127,7 @@ const Page = ({ children }) => {
     <>
       <GlobalStyles />
       <Typography />
-      <Header mode={mode} toggleMode={toggleMode} />
+      <Header />
       <PageLayout>{children}</PageLayout>
     </>
   )
@@ -171,7 +171,7 @@ const Paragraph = styled.p`
 export { Typography, Paragraph }
 ```
 
-> Simply by importing font files into the [Typography](./src/styles/Typography.js), it creates a URL with a unique identifier that you can use when declaring the`@font-face`. Just remember to set the right font-family in your [GlobalStyles](./src/styles/GlobalStyles.js) and also set the Typography component on top of the main [Layout](#layout).
+> By importing font files into the [Typography](./src/styles/Typography.js), it creates URL with a unique identifier that you can use to declare the `@font-face`. Just remember to set the right font-family in your [GlobalStyles](./src/styles/GlobalStyles.js) and also put the Typography component on top of the main [Layout](#layout).
 
 ### Theming
 
@@ -215,7 +215,7 @@ export default Page
 
 All the basic styling is ready and you need to create a few pages. Pages can be [dynamically generated](https://www.gatsbyjs.com/docs/node-apis/#createPages) or they can be created in a file system routing. So go to the `pages/` directory and in addition to `index.js` as the starting point of the site, create the other pages you need.
 
-Now Gatsby will handle the [routing](https://www.gatsbyjs.com/docs/routing/) by creating a path for each page. Instead of using an anchor link that will reload the entire page, you will need to connect them with Gatsby [Link](https://www.gatsbyjs.com/docs/gatsby-link/) and get the preloaded page content blazingly fast on each click.
+Now Gatsby will handle the [routing](https://www.gatsbyjs.com/docs/routing/) by creating a path for each page. Instead of using an anchor link that will reload the entire page, you will need to connect them with [Gatsby Link](https://www.gatsbyjs.com/docs/gatsby-link/) and get the preloaded page content blazingly fast on each click.
 
 ```
 import React from 'react'
@@ -236,7 +236,7 @@ export default NotFoundPage
 
 > If the user visits a page that doesn't exist, Gatsby will render 404 by default, but you'll probably want to have a custom page for that.
 
-Link is intended for Gatsby-only pages, for all external connections, you can still use the standard <a> element.
+Link is intended for Gatsby-only pages, for all external connections, you can still use the standard `<a>` element.
 
 ### Image
 

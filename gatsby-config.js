@@ -4,5 +4,16 @@ module.exports = {
     siteUrl: 'https://gatsby-styled-components',
     description: 'Gatsby starter with modular file structure and support for Styled Components',
   },
-  plugins: ['gatsby-plugin-styled-components', 'gatsby-plugin-react-helmet'],
+  plugins: [
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-react-helmet',
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/assets/images`,
+      },
+    },
+  ],
 }

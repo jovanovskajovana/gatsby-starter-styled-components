@@ -240,8 +240,60 @@ Link is intended for Gatsby-only pages, for all external connections, you can st
 
 ### Image
 
-1. Static import with Webpack
-2. Graphql
+Images usually slow down your site and Gatsby is trying to fix this problem. In order to resize and compress, fix the aspect ratio, set in multiple formats and lazy load them, Gatsby must [process](https://www.gatsbyjs.com/docs/using-gatsby-image/) the images.
+
+Use the `gatsby-image` component, which will source your images from a directory with `gatsby-source-filesystem` and serve optimized images with `gatsby-plugin-sharp`. Make sure to configure the [gatsby-config.js](./ gatsby-config.js) file with the correct path to the image folder.
+
+```
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
+
+import { ImageLayout } from '../styles/ImageLayout'
+
+export default () => (
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "image-name.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
+  return (
+    <ImageLayout>
+      <Img fluid={data.file.childImageSharp.fluid} alt="Gatsby image" />
+    </ImageLayout>
+  )
+}
+```
+
+Use the [Image](./src/components/Image.js) component to query all the images at build time and filter by the given name.
+
+```
+  <Image name="logo-gatsby-styled-components.png" alt="Gatsby image" minWidth="500px"></Image>
+```
+
+> This way, you won’t have to write the same query multiple times, but processing a large number of images can take a long time. In this case, consider an external image processing pipeline service.
+
+For small images and icons a [static import with Webpack](https://www.gatsbyjs.com/docs/importing-assets-into-files/) is still an option. Similar to font files, make sure that the images are imported into the component so that Webpack will correctly move them into the public folder, and provide the correct paths.
+
+```
+import React from "react"
+import imgUrl from "../assets/images/image-name.jpg"
+
+import { ImageLayout } from '../styles/ImageLayout'
+
+export default () => (
+  <ImageLayout>
+    <img src={imgUrl} alt="Static image" />
+  </ImageLayout>
+)
+```
 
 ### Gatsby Browser and Gatsby SSR
 

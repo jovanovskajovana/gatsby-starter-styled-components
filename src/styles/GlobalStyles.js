@@ -66,6 +66,11 @@ const GlobalStyles = createGlobalStyle`
   img {
     max-width: 100%;
   }
+
+  img[src*=base64\\,] {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
 `
 
 export default GlobalStyles

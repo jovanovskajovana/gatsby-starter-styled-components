@@ -138,7 +138,7 @@ export default Page
 
 ### Gatsby Browser and Gatsby SSR
 
-As your site grows bigger, you don't want to go trough every single page and wrap the [Layout](#layout) component around it. Instead, you can use the Gatsby [wrapPageElement](https://www.gatsbyjs.com/docs/ssr-apis/#wrapPageElement) plugin, which will be defined in the [gatsby-ssr.js](https://www.gatsbyjs.com/docs/api-files-gatsby-ssr) and [gatsby-browser.js](https://www.gatsbyjs.com/docs/api-files-gatsby-browser/) files at the root of your project to automatically wrap your layout.
+As your site grows bigger, you don't want to go trough every single page and wrap the [Layout](#layout) component around it. Instead, you can use the Gatsby [wrapPageElement](https://www.gatsbyjs.com/docs/ssr-apis/#wrapPageElement) plugin, which will be defined in the [gatsby-ssr.js](https://www.gatsbyjs.com/docs/api-files-gatsby-ssr) and [gatsby-browser.js](https://www.gatsbyjs.com/docs/api-files-gatsby-browser/) files at the root of your project, to automatically wrap the main layout.
 
 ```
 import React from 'react'
@@ -315,4 +315,4 @@ Lorem ipsum
 
 ### Deploy
 
-Lorem ipsum
+The deploy can be easily done on (Netlify)[https://www.netlify.com/]. In your account simply create a new site from the Git repository. Select the `main` branch for production and `develop` for a staging environment and Voila!, a Continuous Deployment (CD) is set.

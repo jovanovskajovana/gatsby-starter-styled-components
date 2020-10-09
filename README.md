@@ -28,11 +28,11 @@ gatsby new your-project-name https://github.com/jovanovskajovana/gatsby-starter-
 
 - [Styled Components](#styled-components)
 - [Layout](#layout)
+- [Browser and SSR](#gatsby-browser-and-gatsby-ssr)
 - [Typography](#typography)
 - [Theming](#theming)
 - [Link](#link)
 - [Image](#image)
-- [Browser and SSR](#gatsby-browser-and-gatsby-ssr)
 - [SEO](#seo)
 - [Deploy](#deploy)
 
@@ -134,6 +134,20 @@ const Page = ({ children }) => {
 }
 
 export default Page
+```
+
+### Gatsby Browser and Gatsby SSR
+
+As your site grows bigger, you don't want to go trough every single page and wrap the [Layout](#layout) component around it. Instead, you can use the Gatsby [wrapPageElement](https://www.gatsbyjs.com/docs/ssr-apis/#wrapPageElement) plugin, which will be defined in the [gatsby-ssr.js](https://www.gatsbyjs.com/docs/api-files-gatsby-ssr) and [gatsby-browser.js](https://www.gatsbyjs.com/docs/api-files-gatsby-browser/) files at the root of your project to automatically wrap your layout.
+
+```
+import React from 'react'
+
+import Page from './src/components/Page'
+
+export function wrapPageElement({ element, props }) {
+  return <Page {...props}>{element}</Page>
+}
 ```
 
 ### Typography
@@ -293,20 +307,6 @@ export default () => (
     <img src={imgUrl} alt="Static image" />
   </ImageLayout>
 )
-```
-
-### Gatsby Browser and Gatsby SSR
-
-As your site grows bigger, you don't want to go trough every single page and wrap the [Layout](#layout) component around it. Instead, you can use the Gatsby [wrapPageElement](https://www.gatsbyjs.com/docs/ssr-apis/#wrapPageElement) plugin, which will be defined in the [gatsby-ssr.js](https://www.gatsbyjs.com/docs/api-files-gatsby-ssr) and [gatsby-browser.js](https://www.gatsbyjs.com/docs/api-files-gatsby-browser/) files at the root of your project to automatically wrap your layout.
-
-```
-import React from 'react'
-
-import Page from './src/components/Page'
-
-export function wrapPageElement({ element, props }) {
-  return <Page {...props}>{element}</Page>
-}
 ```
 
 ### SEO

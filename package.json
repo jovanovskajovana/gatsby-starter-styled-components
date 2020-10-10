@@ -2,7 +2,7 @@
   "author": "Jovana Jovanovska",
   "name": "gatsby-starter-styled-components",
   "description": "Gatsby starter with modular file structure and support for Styled Components",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "license": "MIT",
   "scripts": {

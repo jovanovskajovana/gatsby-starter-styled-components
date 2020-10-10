@@ -85,7 +85,7 @@ export default Header
 
 <br/>
 
-You can also create your own global style normalizer with `createGlobalStyle`. Place the GlobalStyles on top of the main [Layout](#layout) component to ensure that it is shared over all pages.
+You can also create your own global style normalizer with `createGlobalStyle`. Place the GlobalStyles to the top of the main [Layout](#layout) component to ensure that it is shared over all pages.
 
 ```
 import { createGlobalStyle } from 'styled-components'
@@ -152,7 +152,7 @@ export function wrapPageElement({ element, props }) {
 
 ### Typography
 
-Depending on the source of the fonts, you can choose a [different approach](https://www.gatsbyjs.com/docs/working-with-fonts-and-typography/) to include them in the site. When working with custom fonts, you can host them locally in the `assets/fonts` directory, and Gatsby will make sure they are moved to a static folder, included in the page header, and served before the site is rendered.
+Depending on the source of the fonts, you can choose a [different approach](https://www.gatsbyjs.com/docs/working-with-fonts-and-typography/) to include them in the site. When working with custom fonts, you can host them locally in the `assets/fonts/` directory, and Gatsby will make sure they are moved to the `static/` folder, included in the page header, and served before the site is rendered.
 
 ```
 import styled, { createGlobalStyle } from 'styled-components'
@@ -227,9 +227,9 @@ export default Page
 
 ### Link
 
-All the basic styling is ready and you need to create a few pages. Pages can be [dynamically generated](https://www.gatsbyjs.com/docs/node-apis/#createPages) or they can be created in a file system routing. So go to the `pages/` directory and in addition to `index.js` as the starting point of the site, create the other pages you need.
+All the basic styling is ready and you need to create a few pages. Pages can be [dynamically generated](https://www.gatsbyjs.com/docs/node-apis/#createPages) or they can be created in a file system routing. Go to the `pages/` directory and, in addition to `index.js` as the starting point of the site, create the other pages you need.
 
-Now Gatsby will handle the [routing](https://www.gatsbyjs.com/docs/routing/) by creating a path for each page. Instead of using an anchor link that will reload the entire page, you will need to connect them with [Gatsby Link](https://www.gatsbyjs.com/docs/gatsby-link/) and get the preloaded page content blazingly fast on each click.
+Now Gatsby will handle the [routing](https://www.gatsbyjs.com/docs/routing/) by creating a path for each page. Instead of using an anchor link that would reload the entire page, connect them with [Gatsby Link](https://www.gatsbyjs.com/docs/gatsby-link/) and get the preloaded page content blazingly fast on each click.
 
 ```
 import React from 'react'
@@ -248,7 +248,7 @@ const NotFoundPage = () => (
 export default NotFoundPage
 ```
 
-> If the user visits a page that doesn't exist, Gatsby will render 404 by default, but you'll probably want to have a custom page for that.
+> If the user visits a page that doesn't exist, Gatsby will render 404 by default, but you can create a custom page for that.
 
 Link is intended for Gatsby-only pages, for all external connections, you can still use the standard `<a>` element.
 
@@ -292,14 +292,14 @@ Use the [Image](./src/components/Image.js) component to query all the images at 
   <Image name="logo-gatsby-styled-components.png" alt="Gatsby image" minWidth="500px"></Image>
 ```
 
-> This way, you won’t have to write the same query multiple times, but processing a large number of images can take a long time. If that happens, consider an external image processing service.
+> This way, you won’t have to write the same query multiple times, but processing a large number of images can take a long time. If that happens, consider querying the images from an external image processing service (eg. [Sanity image pipeline](https://www.sanity.io/docs/asset-pipeline)).
 
-For small images and icons a [static import with Webpack](https://www.gatsbyjs.com/docs/importing-assets-into-files/) is still an option. Similar to font files, make sure that the images are imported into the component so that Webpack will correctly move them into the public folder, and provide the correct paths.
+For small images and icons a [static import with Webpack](https://www.gatsbyjs.com/docs/importing-assets-into-files/) is still an option. Similar to font files, make sure that the images are imported into the component so that Webpack will correctly move them into the public folder and provide the correct paths.
 
 ```
 import React from "react"
-import imgUrl from "../assets/images/image-name.jpg"
 
+import imgUrl from "../assets/images/image-name.jpg"
 import { ImageLayout } from '../styles/ImageLayout'
 
 export default () => (
@@ -315,4 +315,4 @@ Lorem ipsum
 
 ### Deploy
 
-The deploy can be easily done on [Netlify](https://www.netlify.com/). In your account simply create a new site from the Git repository. Select the `main` branch for production and `develop` for a staging environment and voilà! a Continuous Deployment (CD) is set.
+The deploy can be easily done on [Netlify](https://www.netlify.com/). In your account simply create a new site from the Git repository. Select the `main` branch for production and `develop` for a staging environment, and voilà! a Continuous Deployment (CD) is set.

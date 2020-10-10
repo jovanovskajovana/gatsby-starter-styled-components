@@ -311,7 +311,47 @@ export default () => (
 
 ### SEO
 
-We put title and description metadata in the header of the document to help search engines understand the content of our site and know when it should appear in search results. Create an SEO component with `react-helmet` that will make sure to add all metadata attributes to the static HTML pages that Gatsby builds.
+We put title and description metadata in the header of the document to help search engines understand the content of our site and know when it should appear in search results.
+
+```
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
+
+const SEO = ({ children, title, description, image, location }) => {
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
+          author
+        }
+      }
+    }
+  `)
+
+  return (
+    <Helmet titleTemplate={`%s - ${site.siteMetadata.title}`}>
+      <html lang="en" />
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <meta name="description" content={site.siteMetadata.description} />
+      <title>{title}</title>
+
+      ...
+
+      {children}
+    </Helmet>
+  )
+}
+
+export default SEO
+
+```
+
+> Create an [SEO](./src/components/SEO.js) component with `react-helmet` that will make sure to add all metadata attributes to the static HTML pages that Gatsby builds. Then use it on all your [pages](./src/pages/contact.js) to provide the page title and any other information.
 
 ### Deploy
 

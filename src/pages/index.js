@@ -1,12 +1,16 @@
 import React from 'react'
 
+import SEO from '../components/SEO'
 import { Layout } from '../styles/PageLayout'
 import { Headline } from '../styles/Typography'
 
 const HomePage = () => (
-  <Layout>
-    <Headline>hi, you</Headline>
-  </Layout>
+  <>
+    <SEO title="Home" />
+    <Layout>
+      <Headline>hi, you</Headline>
+    </Layout>
+  </>
 )
 
 export default HomePage

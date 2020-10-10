@@ -311,8 +311,8 @@ export default () => (
 
 ### SEO
 
-Lorem ipsum
+We put title and description metadata in the header of the document to help search engines understand the content of our site and know when it should appear in search results. Create an SEO component with `react-helmet` that will make sure to add all metadata attributes to the static HTML pages that Gatsby builds.
 
 ### Deploy
 
-The deploy can be easily done on [Netlify](https://www.netlify.com/). In your account simply create a new site from the Git repository. Select the `main` branch for production and `develop` for a staging environment. Netlify will recognize the `gatsby build` command and publish the `public` directory. Voilà! a Continuous Deployment (CD) is set.
+The deploy can be easily done on [Netlify](https://www.netlify.com/). In your account, simply create a new site from the Git repository. Select the `main` branch for production and `develop` for a staging environment. Netlify will recognize the `gatsby build` command and publish the `public` directory. Voilà! a Continuous Deployment (CD) is set.

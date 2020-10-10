@@ -315,4 +315,4 @@ Lorem ipsum
 
 ### Deploy
 
-The deploy can be easily done on [Netlify](https://www.netlify.com/). In your account simply create a new site from the Git repository. Select the `main` branch for production and `develop` for a staging environment, and voilà! a Continuous Deployment (CD) is set.
+The deploy can be easily done on [Netlify](https://www.netlify.com/). In your account simply create a new site from the Git repository. Select the `main` branch for production and `develop` for a staging environment. Netlify will recognize the `gatsby build` command and publish the `public` directory. Voilà! a Continuous Deployment (CD) is set.

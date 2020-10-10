@@ -292,7 +292,7 @@ Use the [Image](./src/components/Image.js) component to query all the images at 
   <Image name="logo-gatsby-styled-components.png" alt="Gatsby image" minWidth="500px"></Image>
 ```
 
-> This way, you won’t have to write the same query multiple times, but processing a large number of images can take a long time. If that happens, consider querying the images from an external image processing service (eg. [Sanity image pipeline](https://www.sanity.io/docs/asset-pipeline)).
+> This way, you won’t have to write the same query multiple times, but processing a large number of images can take a long time. If that happens, consider querying from an external image processing service (eg. [Sanity image pipeline](https://www.sanity.io/docs/asset-pipeline)).
 
 For small images and icons a [static import with Webpack](https://www.gatsbyjs.com/docs/importing-assets-into-files/) is still an option. Similar to font files, make sure that the images are imported into the component so that Webpack will correctly move them into the public folder and provide the correct paths.
 

@@ -2,17 +2,19 @@ import styled from 'styled-components'
 
 const PageLayout = styled.div`
   display: flex;
-  background: ${(props) => props.theme.backgroundPrimary};
+  background-color: ${(props) => props.theme.background};
   color: ${(props) => props.theme.textPrimary};
-  height: ${(props) => props.theme.height};
-  width: ${(props) => props.theme.width};
+  width: 100%;
+  min-height: 100vh;
 `
 
 const Layout = styled.div`
   display: flex;
   flex-direction: ${(props) => (props.column ? 'column' : 'row')};
-  height: ${(props) => (props.height ? props.height : props.theme.height)};
-  width: ${(props) => (props.width ? props.width : props.theme.width)};
+  min-height: ${(props) => (props.minHeight ? props.minHeight : '100%')};
+  min-width: ${(props) => (props.minWidth ? props.minWidth : '100%')};
+  justify-content: ${(props) => (props.justifyContent ? props.justifyContent : 'center')};
+  align-items: ${(props) => (props.alignItems ? props.alignItems : 'center')};
 `
 
 export { PageLayout, Layout }

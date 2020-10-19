@@ -1,13 +1,13 @@
 const theme = {
   light: {
-    background: '#efefef',
+    background: '#e1e3f8',
     textPrimary: '#643d69',
     textSecondary: '#37364d',
     buttonPrimary: '#5a4fff',
     buttonGhost: 'transparent',
   },
   dark: {
-    background: '#887a8a',
+    background: '#665469',
     textPrimary: '#fff',
     textSecondary: '#37364d',
     buttonPrimary: '#fff',

@@ -2,7 +2,7 @@ import React from 'react'
 
 import Page from '../components/Page'
 import SEO from '../components/SEO'
-import { Layout } from '../styles/PageLayout'
+import { Container } from '../styles/PageLayout'
 import { Headline } from '../styles/Typography'
 
 // This is an example page with wrapped layout.
@@ -13,9 +13,9 @@ import { Headline } from '../styles/Typography'
 const WrappedLayoutPage = () => (
   <Page>
     <SEO title="Example" />
-    <Layout>
+    <Container>
       <Headline>this is an example page with wrapped layout</Headline>
-    </Layout>
+    </Container>
   </Page>
 )
 

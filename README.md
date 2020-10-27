@@ -27,13 +27,13 @@ gatsby new your-project-name https://github.com/jovanovskajovana/gatsby-starter-
 ## 🕵️‍♀️ Dive deeper
 
 - [Styled Components](#styled-components)
-- [Layout](#layout)
-- [Browser and SSR](#gatsby-browser-and-gatsby-ssr)
-- [Typography](#typography)
+- [Creating a Layout](#creating-a-layout)
+- [Browser and SSR API files](#gatsby-browser-and-gatsby-ssr)
+- [Working with Typography](#working-with-typography)
 - [Theming](#theming)
-- [Link](#link)
-- [Image](#image)
-- [SEO](#seo)
+- [Using Link](#using-link)
+- [Using Image](#using-image)
+- [SEO Optimization](#seo-optimization)
 - [Deploy](#deploy)
 
 ### Styled Components
@@ -85,7 +85,7 @@ export default Header
 
 <br/>
 
-You can also create your own global style normalizer with `createGlobalStyle`. Place the GlobalStyles to the top of the main [Layout](#layout) component to ensure that it is shared over all pages.
+You can also create your own global style normalizer with `createGlobalStyle`. Place the GlobalStyles to the top of the main [Layout](#creating-a-layout) component to ensure that it is shared over all pages.
 
 ```
 import { createGlobalStyle } from 'styled-components'
@@ -109,7 +109,7 @@ const GlobalStyles = createGlobalStyle`
 export default GlobalStyles
 ```
 
-### Layout
+### Creating a Layout
 
 Most likely, you will like to have a general site structure with header, footer, centered container, some global styles, and so on. Create a generic Page component with a logically structured tree that will wrap all the `children` elements passed from [different pages](./src/pages/wrappedLayout.js).
 
@@ -136,7 +136,7 @@ const Page = ({ children }) => {
 export default Page
 ```
 
-### Gatsby Browser and Gatsby SSR
+### Gatsby Browser and Gatsby SSR API files
 
 As your site grows bigger, you don't want to go trough every single page and wrap the [Layout](#layout) component around it. Instead, you can use the Gatsby [wrapPageElement](https://www.gatsbyjs.com/docs/ssr-apis/#wrapPageElement) plugin, which will be defined in the [gatsby-ssr.js](https://www.gatsbyjs.com/docs/api-files-gatsby-ssr) and [gatsby-browser.js](https://www.gatsbyjs.com/docs/api-files-gatsby-browser/) files at the root of your project, to automatically wrap the main layout.
 
@@ -150,7 +150,7 @@ export function wrapPageElement({ element, props }) {
 }
 ```
 
-### Typography
+### Working with Typography
 
 Depending on the source of the fonts, you can choose a [different approach](https://www.gatsbyjs.com/docs/working-with-fonts-and-typography/) to include them in the site. When working with custom fonts, you can host them locally in the `assets/fonts/` directory, and Gatsby will make sure they are moved to the `static/` folder, included in the page header, and served before the site is rendered.
 
@@ -225,7 +225,7 @@ export default Page
 
 > With the `useTheme()` [custom hook](./src/hooks/useTheme.js) you can capture user's preferred mode and save it to local storage.
 
-### Link
+### Using Link
 
 All the basic styling is ready and you need to create a few pages. Pages can be [dynamically generated](https://www.gatsbyjs.com/docs/node-apis/#createPages) or they can be created in a file system routing. Go to the `pages/` directory and, in addition to `index.js` as the starting point of the site, create the other pages you need.
 
@@ -235,14 +235,14 @@ Now Gatsby will handle the [routing](https://www.gatsbyjs.com/docs/routing/) by 
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { Layout } from '../styles/PageLayout'
+import { Container } from '../styles/PageLayout'
 import { Headline } from '../styles/Typography'
 
 const NotFoundPage = () => (
-  <Layout column>
+  <Container column>
     <Headline>Oops, where did this page come from?</Headline>
     <Link to="/">← go back home</Link>
-  </Layout>
+  </Container>
 )
 
 export default NotFoundPage
@@ -252,7 +252,7 @@ export default NotFoundPage
 
 Link is intended for Gatsby-only pages, for all external connections, you can still use the standard `<a>` element.
 
-### Image
+### Using Image
 
 Images usually slow down your site and Gatsby is trying to fix this problem. In order to resize and compress, fix the aspect ratio, set in multiple formats and lazy load them, Gatsby must [process the images](https://www.gatsbyjs.com/docs/using-gatsby-image/).
 
@@ -309,7 +309,7 @@ export default () => (
 )
 ```
 
-### SEO
+### SEO Optimization
 
 We put title and description metadata in the header of the document to help search engines understand the content of our site and know when it should appear in search results.
 

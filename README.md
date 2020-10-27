@@ -85,7 +85,7 @@ export default Header
 
 <br/>
 
-You can also create your own global style normalizer with `createGlobalStyle`. Place the GlobalStyles to the top of the main [Layout](#layout) component to ensure that it is shared over all pages.
+You can also create your own global style normalizer with `createGlobalStyle`. Place the GlobalStyles to the top of the main [Layout](#creating-a-layout) component to ensure that it is shared over all pages.
 
 ```
 import { createGlobalStyle } from 'styled-components'
@@ -235,14 +235,14 @@ Now Gatsby will handle the [routing](https://www.gatsbyjs.com/docs/routing/) by 
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { Layout } from '../styles/PageLayout'
+import { Contaner } from '../styles/PageLayout'
 import { Headline } from '../styles/Typography'
 
 const NotFoundPage = () => (
-  <Layout column>
+  <Contaner column>
     <Headline>Oops, where did this page come from?</Headline>
     <Link to="/">← go back home</Link>
-  </Layout>
+  </Contaner>
 )
 
 export default NotFoundPage

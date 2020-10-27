@@ -8,7 +8,7 @@ const PageLayout = styled.div`
   min-height: 100vh;
 `
 
-const Layout = styled.div`
+const Contaner = styled.div`
   display: flex;
   flex-direction: ${(props) => (props.column ? 'column' : 'row')};
   min-height: ${(props) => (props.minHeight ? props.minHeight : '100%')};
@@ -17,4 +17,4 @@ const Layout = styled.div`
   align-items: ${(props) => (props.alignItems ? props.alignItems : 'center')};
 `
 
-export { PageLayout, Layout }
+export { PageLayout, Contaner }

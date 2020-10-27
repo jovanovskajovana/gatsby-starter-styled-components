@@ -1,15 +1,15 @@
 import React from 'react'
 
 import SEO from '../components/SEO'
-import { Layout } from '../styles/PageLayout'
+import { Contaner } from '../styles/PageLayout'
 import { Headline } from '../styles/Typography'
 
 const HomePage = () => (
   <>
     <SEO title="Home" />
-    <Layout>
+    <Contaner>
       <Headline>hi, you</Headline>
-    </Layout>
+    </Contaner>
   </>
 )
 

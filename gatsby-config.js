@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Gatsby starter Styled Components`,
-    siteUrl: 'https://gatsby-styledcomponents.netlify.app',
+    siteUrl: 'https://gatsby-styled.netlify.app/',
     description: 'Gatsby starter with modular file structure and support for Styled Components',
     author: `Jovanovska Jovana`,
   },

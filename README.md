@@ -235,14 +235,14 @@ Now Gatsby will handle the [routing](https://www.gatsbyjs.com/docs/routing/) by 
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { Contaner } from '../styles/PageLayout'
+import { Container } from '../styles/PageLayout'
 import { Headline } from '../styles/Typography'
 
 const NotFoundPage = () => (
-  <Contaner column>
+  <Container column>
     <Headline>Oops, where did this page come from?</Headline>
     <Link to="/">← go back home</Link>
-  </Contaner>
+  </Container>
 )
 
 export default NotFoundPage
